@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background:linear-gradient(135deg,#ffd6eb,#fff4f9);
+font-family:'Poppins',sans-serif;
+text-align:center;
+padding-top:80px;
+}
+
+.card{
+background:white;
+width:380px;
+margin:auto;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(255,105,180,0.25);
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:42px;
+color:#ff4fa3;
+margin-bottom:8px;
+}
+
+.decor{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.date{
+color:#999;
+margin-bottom:25px;
+font-size:14px;
+}
+
+button{
+background:#ff4fa3;
+border:none;
+color:white;
+padding:12px 24px;
+border-radius:20px;
+font-size:15px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff2f92;
+}
+
+.step{
+display:none;
+margin-top:20px;
+line-height:1.8;
+color:#444;
+font-size:14px;
+}
+
+.final{
+font-weight:500;
+color:#ff4fa3;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Happy Birthday</h1>
+<div class="decor">🎀 💗 🎂 💗 🎀</div>
+<p class="date">21 June 2026</p>
+
+<button id="btn" onclick="nextStep()">Open 🎀</button>
+
+<div id="step1" class="step">
+Selamat ulang tahun yang ke <b>14</b>.  
+Semoga hari ulang tahunmu dipenuhi dengan kebahagiaan, tawa,  
+dan banyak hal baik yang datang ke hidupmu.
+</div>
+
+<div id="step2" class="step">
+Aku cuma mau bilang sesuatu yang sederhana.  
+Makasih udah lahir di dunia ini.  
+Karena kalau kamu nggak lahir, mungkin aku juga  
+nggak akan pernah punya kesempatan untuk mengenal kamu.
+</div>
+
+<div id="step3" class="step">
+Dan makasih juga karena kamu pernah hadir di kehidupan ku.  
+Walaupun sekarang semuanya sudah berubah  
+dan kita tidak seperti dulu lagi,  
+aku tetap bersyukur pernah mengenal kamu  
+dan pernah punya cerita bersama kamu.
+</div>
+
+<div id="step4" class="step">
+Semoga di umur yang baru ini kamu bisa jadi pribadi  
+yang semakin baik setiap harinya.  
+Semoga kamu selalu sehat, selalu kuat,  
+dan selalu menemukan alasan untuk tersenyum  
+meskipun ada hari-hari yang tidak mudah.
+</div>
+
+<div id="step5" class="step">
+Aku juga berharap semua hal yang kamu impikan  
+pelan-pelan bisa tercapai.  
+Semoga kamu dikelilingi oleh orang-orang  
+yang benar-benar tulus sayang sama kamu.
+</div>
+
+<div id="step6" class="step final">
+Walaupun sekarang kita berjalan di jalan yang berbeda,  
+aku tetap mendoakan yang terbaik untuk kamu.
+
+<br><br>
+
+💗 Happy 14th Birthday 💗  
+Semoga tahun ini membawa banyak kebahagiaan untukmu.
+</div>
+
+</div>
+
+<script>
+
+let step = 0;
+
+function nextStep(){
+
+step++;
+
+if(step==1){
+document.getElementById("step1").style.display="block";
+document.getElementById("btn").innerText="Next 💗";
+}
+
+else if(step==2){
+document.getElementById("step2").style.display="block";
+document.getElementById("btn").innerText="Next ✨";
+}
+
+else if(step==3){
+document.getElementById("step3").style.display="block";
+document.getElementById("btn").innerText="Next 🎀";
+}
+
+else if(step==4){
+document.getElementById("step4").style.display="block";
+document.getElementById("btn").innerText="Almost There 🎂";
+}
+
+else if(step==5){
+document.getElementById("step5").style.display="block";
+document.getElementById("btn").innerText="Final Message 💌";
+}
+
+else if(step==6){
+document.getElementById("step6").style.display="block";
+document.getElementById("btn").style.display="none";
+}
+
+}
+
+</script>
+
+</body>
+</html>
