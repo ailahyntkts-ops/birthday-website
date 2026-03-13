@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+background:linear-gradient(135deg,#ffd6eb,#fff5fa);
+font-family:'Poppins',sans-serif;
+text-align:center;
+padding:70px 20px;
+margin:0;
+overflow:hidden;
+}
+
+.card{
+background:white;
+max-width:390px;
+margin:auto;
+padding:38px 28px;
+border-radius:28px;
+box-shadow:0 12px 35px rgba(255,105,180,0.18);
+border:1px solid #ffe3f0;
+position:relative;
+z-index:2;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:44px;
+color:#ff4fa3;
+margin:0;
+line-height:1.1;
+}
+
+.decor{
+font-size:20px;
+margin-top:8px;
+margin-bottom:10px;
+}
+
+.date{
+color:#b77a96;
+font-size:14px;
+margin-bottom:22px;
+}
+
+button{
+background:linear-gradient(135deg,#ff66ad,#ff8fc5);
+border:none;
+color:white;
+padding:12px 24px;
+border-radius:22px;
+font-size:14px;
+font-family:'Poppins',sans-serif;
+font-weight:500;
+cursor:pointer;
+box-shadow:0 6px 16px rgba(255,105,180,0.25);
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.04);
+}
+
+.step{
+display:none;
+margin-top:18px;
+line-height:1.8;
+color:#555;
+font-size:14px;
+animation:fadeIn 0.6s ease;
+}
+
+.final{
+font-weight:500;
+color:#ff4fa3;
+margin-top:12px;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Falling hearts & flowers */
+.fall{
+position:fixed;
+top:-40px;
+font-size:24px;
+animation:drop 4s linear forwards;
+z-index:1;
+pointer-events:none;
+}
+
+@keyframes drop{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Happy Birthday</h1>
+<div class="decor">🎀 💗 🎂 💗 🎀</div>
+<p class="date">21 June 2026</p>
+
+<button id="btn" onclick="nextStep()">Open 🎀</button>
+
+<div id="step1" class="step">
+Selamat ulang tahun yang ke <b>14</b>.  
+Semoga hari ini jadi salah satu hari yang manis buat kamu.
+</div>
+
+<div id="step2" class="step">
+Makasih udah lahir di dunia ini,  
+dan makasih juga karena kamu pernah hadir di kehidupan ku.
+</div>
+
+<div id="step3" class="step">
+Walaupun sekarang semuanya udah beda  
+dan kita ada di jalan masing-masing,  
+aku tetap bersyukur pernah kenal kamu.
+</div>
+
+<div id="step4" class="step">
+Aku cuma bisa kasih kamu ini.  
+Mungkin sederhana dan ga seberapa,  
+tapi ini aku bikin dengan niat.
+</div>
+
+<div id="step5" class="step">
+Anggap aja ini jadi pemberian terakhirku buat kamu.  
+Kalau suatu hari kamu capek, butuh tempat cerita,  
+atau butuh bantuan, kamu bisa chat aku kapan aja.
+</div>
+
+<div id="step6" class="step">
+Semoga kamu selalu sehat, bahagia,  
+dan semua yang kamu inginkan bisa tercapai pelan-pelan.
+<p class="final">💗 Happy 14th Birthday 💗</p>
+</div>
+
+</div>
+
+<script>
+
+let step = 0;
+
+function nextStep(){
+
+step++;
+
+if(step==1){
+document.getElementById("step1").style.display="block";
+document.getElementById("btn").innerText="Next 💗";
+}
+
+else if(step==2){
+document.getElementById("step2").style.display="block";
+document.getElementById("btn").innerText="Next ✨";
+}
+
+else if(step==3){
+document.getElementById("step3").style.display="block";
+document.getElementById("btn").innerText="A Little More 🎀";
+}
+
+else if(step==4){
+document.getElementById("step4").style.display="block";
+document.getElementById("btn").innerText="Almost There 🌸";
+}
+
+else if(step==5){
+document.getElementById("step5").style.display="block";
+document.getElementById("btn").innerText="Final Surprise 💌";
+}
+
+else if(step==6){
+document.getElementById("step6").style.display="block";
+document.getElementById("btn").innerText="Tap Me Again 💗";
+}
+
+else if(step==7){
+createRain();
+document.getElementById("btn").style.display="none";
+}
+
+}
+
+function createRain(){
+let symbols = ["💗","🌸","🎀","💕","🌷"];
+
+for(let i=0; i<30; i++){
+let item = document.createElement("div");
+item.classList.add("fall");
+item.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+item.style.left = Math.random() * 100 + "vw";
+item.style.animationDuration = (Math.random() * 2 + 3) + "s";
+item.style.fontSize = (Math.random() * 14 + 18) + "px";
+document.body.appendChild(item);
+
+setTimeout(() => {
+item.remove();
+}, 5000);
+}
+}
+
+</script>
+
+</body>
+</html>
